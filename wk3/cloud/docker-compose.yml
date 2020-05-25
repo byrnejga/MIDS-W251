@@ -1,0 +1,21 @@
+version: '3'
+
+
+services:
+
+        cloudbroker:
+                build: ./MqttCloudBroker
+                image: cloudbroker:latest
+                ports:
+                        - "1883:1883"
+
+        imgproc:
+                build: ./ImageProcessor
+                image: imgproc:latest
+                depends_on:
+                        - cloudbroker
+
+networks:
+        wk3:
+           driver: bridge
+
