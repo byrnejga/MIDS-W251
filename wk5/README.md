@@ -69,7 +69,7 @@ Epoch 2/2
 115/115 [==============================] - 206s 2s/step - loss: 0.3478 - acc: 0.9062
 ```
 
-on the RTX2080, run natively as the docker image is for arm64 not X86_64 architecture:
+on the RTX2080, I ran the notebook model natively. The docker image is for arm64 not X86_64.
 ```
 Epoch 1/2
 115/115 [==============================] - 14s 124ms/step - loss: 0.6457 - acc: 0.8438
@@ -78,5 +78,57 @@ Epoch 2/2
 
 ```
 
-Overall, the model trained 18 times faster on the RTX, but of course, price vs. performance and the impracticality of using a double width full-size graphics card at the edge are important factors as well. the full-size PC would be better suited as a local hub where high-volume or complex models are run.
+Overall, the model trained 18 times faster on the RTX with greater accuracy results. Price vs. performance and the impracticality of using a double width full-length graphics card at the edge are important factors as well. the RTX solution in a full-size PC would be better suited as a local hub where high-volume or complex models are run.  In the face recognition pipeline from HW3, using the TX2 to recognize and extract face images could be paired with face identity recognition running on a hub with an RTX card.
 
+
+
+### Questions:
+
+### 1. What is TensorFlow? Which company is the leading contributor to TensorFlow?
+Tensorflow is a machine learning framework for training neural networks and inferring results from generalized data. The newer release 2 integrates the Keras libraries which make creating complex networks simple, especially for the early stages of development. Google's brain team were the core developers of TensorFlow, and continue to be a major contributor to the project.
+
+### 2. What is TensorRT? How is it different from TensorFlow?
+TensorRT is NVidia's Inferrence accelerator library built on CUDA and optimized for NVidia's GPU general and tensor cores. It can take pre-trained models from many different frameworks and run hardware optimized inferrence.  TensorFlow is a full ML framework, and once trained TensorFlow models can be loaded into TensorRT for run-time inferrence using NVidia's GPU hardware.
+
+
+### 3. What is ImageNet? How many images does it contain? How many classes?
+ImageNet is a freely available, continually expanding database of classified, labelled images for use in training vision-based ML models. It uses a hierarchical set of classes that allow multiple levels of detail in the classifications.  There are some 100,000 classes currently - called "synsets" short for synonym sets, that provide mostly noun labels for each image. ImageNet aim to have some 1000+ images per synset, or over 100,000,000 images in total. 
+
+### 4. Please research and explain the differences between MobileNet and GoogleNet (Inception) architectures.
+The key difference is the way that each model steps through the images - the convolution step. Inception uses conventional convolution - the filter takes an NxN square of pixels times the colour depth - usually 3 for RGB or 4 where there is a transparency channel -and operates using a single kernel of NxNx3.  The MobileNet convolution breaks up the convolution into multiple, vector kernels and operates them in sequence: Nx1 followed by 1XN followed by a 3x1 for the colour channels.  This results in fewer elements (2N+3) vs Inception (3N^2), and consequently fewer multiplication events.  This results in a faster and smaller model at the expense of some accuracy.
+
+### 5. In your own words, what is a bottleneck?
+A bottleneck is a single layer of a CNN with fewer neurons than the layers surrounding it.  It reduces the the number of channels in the network, limiting the number of features. In our example, the bottleneck layer takes its input from the pre-trained layers we are transfering from the ImageNet model to produce the final outputs using the new classes we are looking for.  As the previous layers are frozen, the bottleneck layer can be calculated during pre-processing to reduce time in subsequent training runs.
+
+### 6. How is a bottleneck different from the concept of layer freezing?
+The Bottleneck files produced by TF in preprocessing create a structure based on the input files as we may look at the same picture multiple times during the training.  They are NOT frozen layers, their parameters and biases can change, it just avoids having to re-extract the structure needed each time the image is used.
+
+### 7. In the TF1 lab, you trained the last layer (all the previous layers retain their already-trained state). Explain how the lab used the previous layers (where did they come from? how were they used in the process?)
+The previous layers were pre-trained as part of the ImageNet project - with the output layer removed. We take advantage of the pre-trained layers' object identification abilities, then put in our own final layer to map to the flower-specific categories we are interested in.
+
+### 8. How does a low --learning_rate (step 7 of TF1) value (like 0.005) affect the precision? How much longer does training take?
+There was no appreciable difference in training time based on learning rate for either the TX2 and RTX2080.  There were some differences in accuracy, which generally reduced for larger learning rates, but there was significant "noise" between different runs which could simply be due to the random selection of samples.
+
+#### Details: (see TX2 Results.png and RTX2080 Results.png)
+![Run on RTX2080]('./RTX2080 Results.png?raw=true')
+![Run on TX2]('./TX2 Results.png?raw=true')
+
+
+
+### 9. How about a --learning_rate (step 7 of TF1) of 1.0? Is the precision still good enough to produce a usable graph?
+the TF of 1.0 I think is still usable.  The experiementation shows that although not the best, it is still within two percentage points of the best results we got.
+
+### 10. For step 8, you can use any images you like. Pictures of food, people, or animals work well. You can even use ImageNet images. How accurate was your model? Were you able to train it using a few images, or did you need a lot?
+
+
+### 11. Run the TF1 script on the CPU (see instructions above) How does the training time compare to the default network training (section 4)? Why?
+Training Time (TX2):  Default using GPU:    16m38.014s
+Training Time (TX2):  Rerun using CPU Only: 14m25.134s
+
+This seems not correct, though it was clear from monitoring that the GPU was not in uyse on the second run.
+
+### 12. Try the training again, but this time do export ARCHITECTURE="inception_v3" Are CPU and GPU training times different?
+Training Time (TX2):  Default using GPU:    30m50.851s
+Training Time (TX2):  Rerun using CPU Only: 46m23.010s
+
+### 13. Given the hints under the notes section, if we trained Inception_v3, what do we need to pass to replace ??? below to the label_image script? Can we also glean the answer from examining TensorBoard?
