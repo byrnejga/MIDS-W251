@@ -109,20 +109,26 @@ The previous layers were pre-trained as part of the ImageNet project - with the 
 ### 8. How does a low --learning_rate (step 7 of TF1) value (like 0.005) affect the precision? How much longer does training take?
 There was no appreciable difference in training time based on learning rate for either the TX2 and RTX2080.  There were some differences in accuracy, which generally reduced for larger learning rates, but there was significant "noise" between different runs which could simply be due to the random selection of samples.
 
-#### Details:
-
+#### Details: (see TX2 Results.png and RTX2080 Results.png)
+![Run on RTX2080]('./RTX2080 Results.png?raw=true')
+![Run on TX2]('./TX2 Results.png?raw=true')
 
 
 
 ### 9. How about a --learning_rate (step 7 of TF1) of 1.0? Is the precision still good enough to produce a usable graph?
+the TF of 1.0 I think is still usable.  The experiementation shows that although not the best, it is still within two percentage points of the best results we got.
 
 ### 10. For step 8, you can use any images you like. Pictures of food, people, or animals work well. You can even use ImageNet images. How accurate was your model? Were you able to train it using a few images, or did you need a lot?
 
+
 ### 11. Run the TF1 script on the CPU (see instructions above) How does the training time compare to the default network training (section 4)? Why?
 Training Time (TX2):  Default using GPU:    16m38.014s
-Training Time (TX2):  Rerun using CPU Only:  
+Training Time (TX2):  Rerun using CPU Only: 14m25.134s
 
+This seems not correct, though it was clear from monitoring that the GPU was not in uyse on the second run.
 
 ### 12. Try the training again, but this time do export ARCHITECTURE="inception_v3" Are CPU and GPU training times different?
+Training Time (TX2):  Default using GPU:    30m50.851s
+Training Time (TX2):  Rerun using CPU Only: 46m23.010s
 
 ### 13. Given the hints under the notes section, if we trained Inception_v3, what do we need to pass to replace ??? below to the label_image script? Can we also glean the answer from examining TensorBoard?
