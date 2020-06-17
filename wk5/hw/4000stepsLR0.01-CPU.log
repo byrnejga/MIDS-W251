@@ -1,0 +1,439 @@
+2020-06-14 14:02:43.057836: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+WARNING:tensorflow:From /tmp/tensorflow-for-poets-2/scripts/retrain.py:1326: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+WARNING:tensorflow:From /tmp/tensorflow-for-poets-2/scripts/retrain.py:970: The name tf.logging.set_verbosity is deprecated. Please use tf.compat.v1.logging.set_verbosity instead.
+
+W0614 14:02:51.407825 548426231824 module_wrapper.py:139] From /tmp/tensorflow-for-poets-2/scripts/retrain.py:970: The name tf.logging.set_verbosity is deprecated. Please use tf.compat.v1.logging.set_verbosity instead.
+
+WARNING:tensorflow:From /tmp/tensorflow-for-poets-2/scripts/retrain.py:970: The name tf.logging.INFO is deprecated. Please use tf.compat.v1.logging.INFO instead.
+
+W0614 14:02:51.408603 548426231824 module_wrapper.py:139] From /tmp/tensorflow-for-poets-2/scripts/retrain.py:970: The name tf.logging.INFO is deprecated. Please use tf.compat.v1.logging.INFO instead.
+
+WARNING:tensorflow:From /tmp/tensorflow-for-poets-2/scripts/retrain.py:835: The name tf.gfile.Exists is deprecated. Please use tf.io.gfile.exists instead.
+
+W0614 14:02:51.409088 548426231824 module_wrapper.py:139] From /tmp/tensorflow-for-poets-2/scripts/retrain.py:835: The name tf.gfile.Exists is deprecated. Please use tf.io.gfile.exists instead.
+
+WARNING:tensorflow:From /tmp/tensorflow-for-poets-2/scripts/retrain.py:836: The name tf.gfile.DeleteRecursively is deprecated. Please use tf.io.gfile.rmtree instead.
+
+W0614 14:02:51.409773 548426231824 module_wrapper.py:139] From /tmp/tensorflow-for-poets-2/scripts/retrain.py:836: The name tf.gfile.DeleteRecursively is deprecated. Please use tf.io.gfile.rmtree instead.
+
+WARNING:tensorflow:From /tmp/tensorflow-for-poets-2/scripts/retrain.py:837: The name tf.gfile.MakeDirs is deprecated. Please use tf.io.gfile.makedirs instead.
+
+W0614 14:02:51.429883 548426231824 module_wrapper.py:139] From /tmp/tensorflow-for-poets-2/scripts/retrain.py:837: The name tf.gfile.MakeDirs is deprecated. Please use tf.io.gfile.makedirs instead.
+
+WARNING:tensorflow:From /tmp/tensorflow-for-poets-2/scripts/retrain.py:274: FastGFile.__init__ (from tensorflow.python.platform.gfile) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.gfile.GFile.
+W0614 14:02:51.630666 548426231824 deprecation.py:323] From /tmp/tensorflow-for-poets-2/scripts/retrain.py:274: FastGFile.__init__ (from tensorflow.python.platform.gfile) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.gfile.GFile.
+WARNING:tensorflow:From /tmp/tensorflow-for-poets-2/scripts/retrain.py:275: The name tf.GraphDef is deprecated. Please use tf.compat.v1.GraphDef instead.
+
+W0614 14:02:51.631842 548426231824 module_wrapper.py:139] From /tmp/tensorflow-for-poets-2/scripts/retrain.py:275: The name tf.GraphDef is deprecated. Please use tf.compat.v1.GraphDef instead.
+
+WARNING:tensorflow:From /tmp/tensorflow-for-poets-2/scripts/retrain.py:156: The name tf.logging.info is deprecated. Please use tf.compat.v1.logging.info instead.
+
+W0614 14:02:53.084905 548426231824 module_wrapper.py:139] From /tmp/tensorflow-for-poets-2/scripts/retrain.py:156: The name tf.logging.info is deprecated. Please use tf.compat.v1.logging.info instead.
+
+INFO:tensorflow:Looking for images in 'daisy'
+I0614 14:02:53.086018 548426231824 retrain.py:156] Looking for images in 'daisy'
+INFO:tensorflow:Looking for images in 'dandelion'
+I0614 14:02:53.181163 548426231824 retrain.py:156] Looking for images in 'dandelion'
+INFO:tensorflow:Looking for images in 'roses'
+I0614 14:02:53.323435 548426231824 retrain.py:156] Looking for images in 'roses'
+INFO:tensorflow:Looking for images in 'sunflowers'
+I0614 14:02:53.439351 548426231824 retrain.py:156] Looking for images in 'sunflowers'
+INFO:tensorflow:Looking for images in 'tulips'
+I0614 14:02:53.532904 548426231824 retrain.py:156] Looking for images in 'tulips'
+WARNING:tensorflow:From /tmp/tensorflow-for-poets-2/scripts/retrain.py:1004: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W0614 14:02:53.598588 548426231824 module_wrapper.py:139] From /tmp/tensorflow-for-poets-2/scripts/retrain.py:1004: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2020-06-14 14:02:53.603434: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-06-14 14:02:53.604894: E tensorflow/stream_executor/cuda/cuda_driver.cc:318] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2020-06-14 14:02:53.604978: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (6a64ca976879): /proc/driver/nvidia/version does not exist
+2020-06-14 14:02:53.621738: W tensorflow/core/platform/profile_utils/cpu_utils.cc:98] Failed to find bogomips in /proc/cpuinfo; cannot determine CPU frequency
+2020-06-14 14:02:53.622494: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1331dc80 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-06-14 14:02:53.622572: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+WARNING:tensorflow:From /tmp/tensorflow-for-poets-2/scripts/retrain.py:954: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0614 14:02:53.627143 548426231824 module_wrapper.py:139] From /tmp/tensorflow-for-poets-2/scripts/retrain.py:954: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /tmp/tensorflow-for-poets-2/scripts/retrain.py:960: The name tf.image.resize_bilinear is deprecated. Please use tf.compat.v1.image.resize_bilinear instead.
+
+W0614 14:02:53.650659 548426231824 module_wrapper.py:139] From /tmp/tensorflow-for-poets-2/scripts/retrain.py:960: The name tf.image.resize_bilinear is deprecated. Please use tf.compat.v1.image.resize_bilinear instead.
+
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/1441939151_b271408c8d_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:53.680296 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/1441939151_b271408c8d_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/11642632_1e7627a2cc.jpg_mobilenet_0.50_224.txt
+I0614 14:02:54.399072 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/11642632_1e7627a2cc.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/506493250_e9ca42fe3d.jpg_mobilenet_0.50_224.txt
+I0614 14:02:54.478765 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/506493250_e9ca42fe3d.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/102841525_bd6628ae3c.jpg_mobilenet_0.50_224.txt
+I0614 14:02:54.549303 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/102841525_bd6628ae3c.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3546455114_cd2dea5e02.jpg_mobilenet_0.50_224.txt
+I0614 14:02:54.614202 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3546455114_cd2dea5e02.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/437859108_173fb33c98.jpg_mobilenet_0.50_224.txt
+I0614 14:02:54.689893 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/437859108_173fb33c98.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2617111535_54c2ac8462.jpg_mobilenet_0.50_224.txt
+I0614 14:02:54.769486 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2617111535_54c2ac8462.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2509545845_99e79cb8a2_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:54.845607 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2509545845_99e79cb8a2_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4085794721_7cd88e0a6c_m.jpg_mobilenet_0.50_224.txt
+I0614 14:02:54.913247 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4085794721_7cd88e0a6c_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/15760153042_a2a90e9da5_m.jpg_mobilenet_0.50_224.txt
+I0614 14:02:54.987313 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/15760153042_a2a90e9da5_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/8645839873_0151fb92bf_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:55.062432 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/8645839873_0151fb92bf_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4278442064_a5a598524b_m.jpg_mobilenet_0.50_224.txt
+I0614 14:02:55.140384 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4278442064_a5a598524b_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/10555815624_dc211569b0.jpg_mobilenet_0.50_224.txt
+I0614 14:02:55.213265 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/10555815624_dc211569b0.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/495098110_3a4bb30042_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:55.285731 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/495098110_3a4bb30042_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/476856232_7c35952f40_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:55.351966 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/476856232_7c35952f40_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3415180846_d7b5cced14_m.jpg_mobilenet_0.50_224.txt
+I0614 14:02:55.424169 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3415180846_d7b5cced14_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2556503265_63ae6b9e0e_m.jpg_mobilenet_0.50_224.txt
+I0614 14:02:55.498554 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2556503265_63ae6b9e0e_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/20685027271_0e7306e7c1_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:55.564028 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/20685027271_0e7306e7c1_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/1265350143_6e2b276ec9.jpg_mobilenet_0.50_224.txt
+I0614 14:02:55.641959 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/1265350143_6e2b276ec9.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/12348343085_d4c396e5b5_m.jpg_mobilenet_0.50_224.txt
+I0614 14:02:55.714338 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/12348343085_d4c396e5b5_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/18474740346_ffdaa18032.jpg_mobilenet_0.50_224.txt
+I0614 14:02:55.794368 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/18474740346_ffdaa18032.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/8696022686_1f8d62c5cb_m.jpg_mobilenet_0.50_224.txt
+I0614 14:02:55.870650 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/8696022686_1f8d62c5cb_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/18400014056_2e4c601ed5.jpg_mobilenet_0.50_224.txt
+I0614 14:02:55.956310 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/18400014056_2e4c601ed5.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/7199968650_72afc16d31_m.jpg_mobilenet_0.50_224.txt
+I0614 14:02:56.028189 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/7199968650_72afc16d31_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/147068564_32bb4350cc.jpg_mobilenet_0.50_224.txt
+I0614 14:02:56.101596 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/147068564_32bb4350cc.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/253426762_9793d43fcd.jpg_mobilenet_0.50_224.txt
+I0614 14:02:56.187658 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/253426762_9793d43fcd.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/413815348_764ae83088.jpg_mobilenet_0.50_224.txt
+I0614 14:02:56.262957 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/413815348_764ae83088.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2514748602_343d4727c0_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:56.348251 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2514748602_343d4727c0_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/15327813273_06cdf42210.jpg_mobilenet_0.50_224.txt
+I0614 14:02:56.410254 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/15327813273_06cdf42210.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4144275653_7c02d47d9b.jpg_mobilenet_0.50_224.txt
+I0614 14:02:56.494587 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4144275653_7c02d47d9b.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/6210664514_f1d211217a.jpg_mobilenet_0.50_224.txt
+I0614 14:02:56.573577 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/6210664514_f1d211217a.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/1344985627_c3115e2d71_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:56.646507 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/1344985627_c3115e2d71_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5087720485_c0914fb623.jpg_mobilenet_0.50_224.txt
+I0614 14:02:56.726137 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5087720485_c0914fb623.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3703643767_dee82cdef9_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:56.801513 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3703643767_dee82cdef9_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/10555826524_423eb8bf71_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:56.868379 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/10555826524_423eb8bf71_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3475870145_685a19116d.jpg_mobilenet_0.50_224.txt
+I0614 14:02:56.935695 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3475870145_685a19116d.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/14245834619_153624f836.jpg_mobilenet_0.50_224.txt
+I0614 14:02:57.023471 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/14245834619_153624f836.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/7669550908_bc5a11276f_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:57.090945 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/7669550908_bc5a11276f_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/286875003_f7c0e1882d.jpg_mobilenet_0.50_224.txt
+I0614 14:02:57.163495 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/286875003_f7c0e1882d.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/175106495_53ebdef092_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:57.234566 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/175106495_53ebdef092_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4666648087_b10f376f19.jpg_mobilenet_0.50_224.txt
+I0614 14:02:57.308885 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4666648087_b10f376f19.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5881907044_92a85a05c8_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:57.403841 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5881907044_92a85a05c8_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2642408410_61545fdc83_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:57.476385 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2642408410_61545fdc83_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5512287917_9f5d3f0f98_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:57.548902 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5512287917_9f5d3f0f98_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/14921511479_7b0a647795.jpg_mobilenet_0.50_224.txt
+I0614 14:02:57.617553 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/14921511479_7b0a647795.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/267148092_4bb874af58.jpg_mobilenet_0.50_224.txt
+I0614 14:02:57.696851 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/267148092_4bb874af58.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/6299498346_b9774b6500.jpg_mobilenet_0.50_224.txt
+I0614 14:02:57.772544 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/6299498346_b9774b6500.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/8938566373_d129e7af75.jpg_mobilenet_0.50_224.txt
+I0614 14:02:57.850018 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/8938566373_d129e7af75.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/9094631844_1a6abca29e.jpg_mobilenet_0.50_224.txt
+I0614 14:02:57.926455 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/9094631844_1a6abca29e.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/8964198962_6d8593b533.jpg_mobilenet_0.50_224.txt
+I0614 14:02:58.001468 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/8964198962_6d8593b533.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5665834973_76bd6c6523_m.jpg_mobilenet_0.50_224.txt
+I0614 14:02:58.072581 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5665834973_76bd6c6523_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/10391248763_1d16681106_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:58.145139 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/10391248763_1d16681106_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3450822975_7e77d67636_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:58.213593 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3450822975_7e77d67636_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4413849849_b8d2f3bcf1_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:58.274027 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4413849849_b8d2f3bcf1_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/7377004908_5bc0cde347_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:58.344387 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/7377004908_5bc0cde347_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/9310226774_d1b8f5d9c9.jpg_mobilenet_0.50_224.txt
+I0614 14:02:58.430026 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/9310226774_d1b8f5d9c9.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/520752848_4b87fb91a4.jpg_mobilenet_0.50_224.txt
+I0614 14:02:58.505244 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/520752848_4b87fb91a4.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/10841136265_af473efc60.jpg_mobilenet_0.50_224.txt
+I0614 14:02:58.584441 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/10841136265_af473efc60.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5586977262_6b24412805_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:58.659611 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5586977262_6b24412805_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/6910811638_aa6f17df23.jpg_mobilenet_0.50_224.txt
+I0614 14:02:58.743350 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/6910811638_aa6f17df23.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5435521200_92029bbe2b_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:58.819451 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5435521200_92029bbe2b_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/8382667241_0f046cecdb_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:58.887982 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/8382667241_0f046cecdb_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/158869618_f1a6704236_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:58.955919 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/158869618_f1a6704236_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5874818796_3efbb8769d.jpg_mobilenet_0.50_224.txt
+I0614 14:02:59.023588 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5874818796_3efbb8769d.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5869147563_66fb88119d.jpg_mobilenet_0.50_224.txt
+I0614 14:02:59.106608 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5869147563_66fb88119d.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3468498624_d082f99e98.jpg_mobilenet_0.50_224.txt
+I0614 14:02:59.184564 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3468498624_d082f99e98.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/8719756744_34a5a83976_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:59.253222 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/8719756744_34a5a83976_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3639009391_0f910681b7.jpg_mobilenet_0.50_224.txt
+I0614 14:02:59.322948 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3639009391_0f910681b7.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/8681746439_d6beeefbf9.jpg_mobilenet_0.50_224.txt
+I0614 14:02:59.395781 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/8681746439_d6beeefbf9.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/172967318_c596d082cc.jpg_mobilenet_0.50_224.txt
+I0614 14:02:59.467156 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/172967318_c596d082cc.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/11023272144_fce94401f2_m.jpg_mobilenet_0.50_224.txt
+I0614 14:02:59.558349 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/11023272144_fce94401f2_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/43474673_7bb4465a86.jpg_mobilenet_0.50_224.txt
+I0614 14:02:59.635200 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/43474673_7bb4465a86.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/6596277835_9f86da54bb.jpg_mobilenet_0.50_224.txt
+I0614 14:02:59.704435 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/6596277835_9f86da54bb.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3720632920_93cf1cc7f3_m.jpg_mobilenet_0.50_224.txt
+I0614 14:02:59.771914 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3720632920_93cf1cc7f3_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/20580471306_ab5a011b15_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:59.834992 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/20580471306_ab5a011b15_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/1392131677_116ec04751.jpg_mobilenet_0.50_224.txt
+I0614 14:02:59.906447 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/1392131677_116ec04751.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/9161647994_e39b65cb9c_n.jpg_mobilenet_0.50_224.txt
+I0614 14:02:59.975531 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/9161647994_e39b65cb9c_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4890424315_6a59696357_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:00.037624 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4890424315_6a59696357_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/14333681205_a07c9f1752_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:00.118460 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/14333681205_a07c9f1752_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4276898893_609d11db8b.jpg_mobilenet_0.50_224.txt
+I0614 14:03:00.182683 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4276898893_609d11db8b.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/538920244_59899a78f8_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:00.263706 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/538920244_59899a78f8_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4753134939_8e87649db6.jpg_mobilenet_0.50_224.txt
+I0614 14:03:00.329738 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4753134939_8e87649db6.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/7410356270_9dff4d0e2e_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:00.404131 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/7410356270_9dff4d0e2e_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4683997791_56e7d3c03c_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:00.479005 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4683997791_56e7d3c03c_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/14816364517_2423021484_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:00.544570 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/14816364517_2423021484_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2539552964_921cf645ba_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:00.614148 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2539552964_921cf645ba_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/10172567486_2748826a8b.jpg_mobilenet_0.50_224.txt
+I0614 14:03:00.686616 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/10172567486_2748826a8b.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4669117051_ce61e91b76.jpg_mobilenet_0.50_224.txt
+I0614 14:03:00.764097 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4669117051_ce61e91b76.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/9175280426_40ecc395b8_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:00.840921 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/9175280426_40ecc395b8_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3337536080_1db19964fe.jpg_mobilenet_0.50_224.txt
+I0614 14:03:00.916742 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3337536080_1db19964fe.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/9158041313_7a6a102f7a_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:00.985887 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/9158041313_7a6a102f7a_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/18442919723_d1251d3e14_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:01.057410 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/18442919723_d1251d3e14_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3711723108_65247a3170.jpg_mobilenet_0.50_224.txt
+I0614 14:03:01.128766 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3711723108_65247a3170.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/301964511_fab84ea1c1.jpg_mobilenet_0.50_224.txt
+I0614 14:03:01.201907 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/301964511_fab84ea1c1.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5435522104_1d6a61b431_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:01.286924 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5435522104_1d6a61b431_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5602738326_97121e007d_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:01.351414 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5602738326_97121e007d_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5110110938_9da91455c4_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:01.416843 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5110110938_9da91455c4_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2713919471_301fcc941f.jpg_mobilenet_0.50_224.txt
+I0614 14:03:01.479052 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2713919471_301fcc941f.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/9345273630_af3550031d.jpg_mobilenet_0.50_224.txt
+I0614 14:03:01.545821 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/9345273630_af3550031d.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/15813862117_dedcd1c56f_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:01.614445 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/15813862117_dedcd1c56f_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:100 bottleneck files created.
+I0614 14:03:01.680479 548426231824 retrain.py:481] 100 bottleneck files created.
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/6884975451_c74f445d69_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:01.685849 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/6884975451_c74f445d69_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5459481183_18d2d49e44_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:01.751285 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5459481183_18d2d49e44_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/8619103877_d8c82c5f34_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:01.820594 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/8619103877_d8c82c5f34_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/9350942387_5b1d043c26_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:01.895988 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/9350942387_5b1d043c26_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/134409839_71069a95d1_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:01.967563 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/134409839_71069a95d1_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/21805938544_bf6bb0e4bc.jpg_mobilenet_0.50_224.txt
+I0614 14:03:02.043668 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/21805938544_bf6bb0e4bc.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3962240986_0661edc43a_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:02.111675 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3962240986_0661edc43a_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2573240560_ff7ffdd449.jpg_mobilenet_0.50_224.txt
+I0614 14:03:02.182744 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2573240560_ff7ffdd449.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4923279674_e7f8e70794_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:02.266646 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4923279674_e7f8e70794_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2349640101_212c275aa7.jpg_mobilenet_0.50_224.txt
+I0614 14:03:02.350666 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2349640101_212c275aa7.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5673728_71b8cb57eb.jpg_mobilenet_0.50_224.txt
+I0614 14:03:02.429155 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5673728_71b8cb57eb.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4432271543_01c56ca3a9.jpg_mobilenet_0.50_224.txt
+I0614 14:03:02.500457 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4432271543_01c56ca3a9.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4222584034_8964cbd3de.jpg_mobilenet_0.50_224.txt
+I0614 14:03:02.588995 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4222584034_8964cbd3de.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/10993818044_4c19b86c82.jpg_mobilenet_0.50_224.txt
+I0614 14:03:02.670444 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/10993818044_4c19b86c82.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/14088053307_1a13a0bf91_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:02.752201 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/14088053307_1a13a0bf91_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/20948886919_cac7844f34_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:02.828870 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/20948886919_cac7844f34_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5623010186_796ca8d29a.jpg_mobilenet_0.50_224.txt
+I0614 14:03:02.906371 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5623010186_796ca8d29a.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4697206799_19dd2a3193_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:02.990208 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4697206799_19dd2a3193_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/14402451388_56545a374a_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:03.062083 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/14402451388_56545a374a_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3098641292_76c908ba1f_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:03.139562 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3098641292_76c908ba1f_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2513618768_ff7c004796_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:03.221318 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2513618768_ff7c004796_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4668543441_79040ca329_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:03.284983 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4668543441_79040ca329_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/9593034725_0062f0d24e_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:03.345005 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/9593034725_0062f0d24e_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/9054268881_19792c5203_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:03.433246 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/9054268881_19792c5203_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4141147800_813f660b47.jpg_mobilenet_0.50_224.txt
+I0614 14:03:03.500905 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4141147800_813f660b47.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3661613900_b15ca1d35d_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:03.571398 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3661613900_b15ca1d35d_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/15853110333_229c439e7f.jpg_mobilenet_0.50_224.txt
+I0614 14:03:03.643471 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/15853110333_229c439e7f.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/16020253176_60f2a6a5ca_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:03.711183 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/16020253176_60f2a6a5ca_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/8742143296_fed9fa007c.jpg_mobilenet_0.50_224.txt
+I0614 14:03:03.770641 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/8742143296_fed9fa007c.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/134372449_0f7166d96c_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:03.850718 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/134372449_0f7166d96c_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/8740807508_0587f5b7b7.jpg_mobilenet_0.50_224.txt
+I0614 14:03:03.922496 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/8740807508_0587f5b7b7.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4993492878_11fd4f5d12.jpg_mobilenet_0.50_224.txt
+I0614 14:03:03.998448 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4993492878_11fd4f5d12.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5135131051_102d4878ca_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:04.071111 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5135131051_102d4878ca_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2213954589_c7da4b1486.jpg_mobilenet_0.50_224.txt
+I0614 14:03:04.142319 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2213954589_c7da4b1486.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/7227973870_806d9d3e42_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:04.218621 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/7227973870_806d9d3e42_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/1392946544_115acbb2d9.jpg_mobilenet_0.50_224.txt
+I0614 14:03:04.295551 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/1392946544_115acbb2d9.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4897587985_f9293ea1ed.jpg_mobilenet_0.50_224.txt
+I0614 14:03:04.375191 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4897587985_f9293ea1ed.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/14167543177_cd36b54ac6_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:04.441518 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/14167543177_cd36b54ac6_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3764116502_f394428ee0_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:04.502347 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3764116502_f394428ee0_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3628485766_4ff937954a_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:04.564623 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3628485766_4ff937954a_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/7066602021_2647457985_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:04.634027 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/7066602021_2647457985_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3999978867_c67c79597f_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:04.704247 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3999978867_c67c79597f_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2627815904_919373e7f5.jpg_mobilenet_0.50_224.txt
+I0614 14:03:04.770737 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2627815904_919373e7f5.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/6950173662_5e9473003e_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:04.845525 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/6950173662_5e9473003e_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/14372713423_61e2daae88.jpg_mobilenet_0.50_224.txt
+I0614 14:03:04.908229 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/14372713423_61e2daae88.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3598615130_578ed30e5f.jpg_mobilenet_0.50_224.txt
+I0614 14:03:04.978338 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3598615130_578ed30e5f.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/14551098743_2842e7a004_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:05.054760 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/14551098743_2842e7a004_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4865691548_00319261b8.jpg_mobilenet_0.50_224.txt
+I0614 14:03:05.120612 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4865691548_00319261b8.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2331133004_582772d58f_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:05.202993 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2331133004_582772d58f_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/510844526_858b8fe4db.jpg_mobilenet_0.50_224.txt
+I0614 14:03:05.271411 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/510844526_858b8fe4db.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3758221664_b19116d61f.jpg_mobilenet_0.50_224.txt
+I0614 14:03:05.345504 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3758221664_b19116d61f.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/6054952060_c88612f3c5_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:05.413448 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/6054952060_c88612f3c5_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/14221836990_90374e6b34.jpg_mobilenet_0.50_224.txt
+I0614 14:03:05.494114 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/14221836990_90374e6b34.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/1306119996_ab8ae14d72_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:05.570097 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/1306119996_ab8ae14d72_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3611577717_f3a7a8c416_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:05.635717 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3611577717_f3a7a8c416_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/1286274236_1d7ac84efb_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:05.712278 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/1286274236_1d7ac84efb_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/25360380_1a881a5648.jpg_mobilenet_0.50_224.txt
+I0614 14:03:05.791588 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/25360380_1a881a5648.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/162362897_1d21b70621_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:05.875087 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/162362897_1d21b70621_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/4229503616_9b8a42123c_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:05.943428 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/4229503616_9b8a42123c_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5883162120_dc7274af76_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:06.015297 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5883162120_dc7274af76_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5434913005_409c1e8b56_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:06.089813 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5434913005_409c1e8b56_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5884807222_22f5326ba8_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:06.160599 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5884807222_22f5326ba8_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/506018088_4f7a15a7c5_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:06.238736 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/506018088_4f7a15a7c5_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2649404904_b7a91991bb_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:06.311880 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2649404904_b7a91991bb_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5973491805_556bba93cc.jpg_mobilenet_0.50_224.txt
+I0614 14:03:06.383666 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5973491805_556bba93cc.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/6089825811_80f253fbe1.jpg_mobilenet_0.50_224.txt
+I0614 14:03:06.459391 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/6089825811_80f253fbe1.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/11891885265_ccefec7284_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:06.525196 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/11891885265_ccefec7284_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/305160642_53cde0f44f.jpg_mobilenet_0.50_224.txt
+I0614 14:03:06.588983 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/305160642_53cde0f44f.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2365428551_39f83f10bf_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:06.653932 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2365428551_39f83f10bf_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/8127252886_96558c23d1.jpg_mobilenet_0.50_224.txt
+I0614 14:03:06.725765 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/8127252886_96558c23d1.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/7568630428_8cf0fc16ff_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:06.794531 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/7568630428_8cf0fc16ff_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/19177263840_6a316ea639.jpg_mobilenet_0.50_224.txt
+I0614 14:03:06.862653 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/19177263840_6a316ea639.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3326037909_b5ae370722_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:06.933882 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3326037909_b5ae370722_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5796562389_ae43c83317_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:07.015614 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5796562389_ae43c83317_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/7630511450_02d3292e90.jpg_mobilenet_0.50_224.txt
+I0614 14:03:07.084344 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/7630511450_02d3292e90.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/3717746329_53f515c6a6_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:07.161048 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/3717746329_53f515c6a6_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5058708968_8bdcd29e63_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:07.229616 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5058708968_8bdcd29e63_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5679288570_b4c52e76d5.jpg_mobilenet_0.50_224.txt
+I0614 14:03:07.299759 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5679288570_b4c52e76d5.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5626895440_97a0ec04c2_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:07.381990 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5626895440_97a0ec04c2_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/14264136211_9531fbc144.jpg_mobilenet_0.50_224.txt
+I0614 14:03:07.449846 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/14264136211_9531fbc144.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/144076848_57e1d662e3_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:07.515223 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/144076848_57e1d662e3_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/2001380507_19488ff96a_n.jpg_mobilenet_0.50_224.txt
+I0614 14:03:07.596868 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/2001380507_19488ff96a_n.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/5608389827_a42a46f760.jpg_mobilenet_0.50_224.txt
+I0614 14:03:07.670660 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/5608389827_a42a46f760.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/20182559506_40a112f762.jpg_mobilenet_0.50_224.txt
+I0614 14:03:07.755077 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/20182559506_40a112f762.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/1354396826_2868631432_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:07.820423 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/1354396826_2868631432_m.jpg_mobilenet_0.50_224.txt
+INFO:tensorflow:Creating bottleneck at tf_files/bottlenecks/daisy/8882282142_9be2524d38_m.jpg_mobilenet_0.50_224.txt
+I0614 14:03:07.893726 548426231824 retrain.py:361] Creating bottleneck at tf_files/bottlenecks/daisy/8882282142_9be2524d38_m.jpg_mobilenet_0.50_224.txt
