@@ -1,0 +1,49 @@
+# Dockerfile for face recognition with neural network
+# includes python script to capture and recognize
+# HAD TO CONVERT TO PYTHON3 TO USE TENSORRT
+
+# FROM nvcr.io/nvidia/l4t-base:r32.3.1
+FROM w251/tensorflow:dev-tx2-4.3_b132-tf1
+
+
+
+# Set timezone so install does not request it interactively
+# which doesnt work from docker build
+ENV DEBIAN_FRONTEND noninteractive
+
+# Change link so "python" links to "python3"
+RUN cd /usr/bin && rm python && ln -s python3 python
+
+# Install the detection script
+COPY ./py/detectneural.py /bin/
+COPY ./data/frozen_inference_graph_face.pb /bin/
+COPY ./data/warriors.jpg /bin/
+COPY ./tf_trt_models /tmp/tf_trt_models
+COPY ./paho.mqtt.python /tmp/paho.mqtt.python
+RUN chmod +x /bin/detectneural.py
+
+
+# Install the numpy library needed by the script
+RUN apt-get update && \
+	apt-get install -y python-pip && \
+	apt-get install -y python3-matplotlib && \
+	apt-get install -y python3-numpy && \
+	apt-get install -y wget && \
+	apt-get install -y cheese && \
+	apt-get install -y libopencv4tegra && \
+	apt-get install -y libopencv4tegra-dev && \
+	pip3 install numpy && \
+	pip3 install pycuda && \
+	pip3 install tensorrt && \
+	pip3 install pycocotools && \
+	apt-get install -y mosquitto-clients && \
+	apt-get install -y git-all
+
+
+RUN cd /tmp/tf_trt_models/ && ls -la && bash install.sh 
+# RUN cd /tmp/tf_trt_models/ && ls -la && bash install.sh python3
+RUN cd /tmp/paho.mqtt.python/ && ls -la && python3 setup.py install
+
+
+CMD /bin/bash
+# CMD python2 bin/detectneural.py
