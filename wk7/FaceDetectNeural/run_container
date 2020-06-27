@@ -1,7 +1,10 @@
 echo
-echo "RUNNING facedetect (neural)"
-echo ===========================
+echo RUNNING facedetect
+echo ==================
 echo
+
+# docker run --name facedetect -it --rm --net=wk3 --device /dev/video0:/dev/video0 --device /dev/video1:/dev/video1 -e DISPLAY=$DISPLAY -e MQTT_CONNECT=tx2broker --runtime=nvidia facedetect  $*
+
 
 ### QUick and dirty access to the display. Not secure for production use
 xhost +local:root
@@ -10,6 +13,7 @@ XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth
 xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 
-docker run --name facedetectneural -it --rm --net=wk3 --device /dev/video0:/dev/video0 --device /dev/video1:/dev/video1 -e DISPLAY=$DISPLAY -e MQTT_CONNECT=tx2broker -e QT_X11_NO_MITSHM=0 -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH --runtime=nvidia facedetectneural  $*
+nvidia-docker run --name facedetectneural -it --rm --privileged --gpus all --net=wk3 --device /dev/video0:/dev/video0 --device /dev/video1:/dev/video1 -e DISPLAY=$DISPLAY -e MQTT_CONNECT=tx2broker -e QT_X11_NO_MITSHM=0 -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH --runtime=nvidia facedetectneural  $*
 
 xhost -local:root
+

@@ -1,32 +1,41 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 
+from PIL import Image
+import os
 import numpy as np
 import cv2 as cv
 import time
 import paho.mqtt.client as mqtt
 import json
-import tensorflow as tf
 from tensorflow.contrib import tensorrt as trt
+import matplotlib
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+import tensorflow as tf
+import numpy as np
+import time
+from tf_trt_models.detection import download_detection_model, build_detection_graph
 
+print("\n\n##### Starting...")
 
 LOCAL_MQTT_HOST="tx2broker"
 LOCAL_MQTT_PORT=1883
 LOCAL_MQTT_TOPIC="/facedetect/local/faces"
 
-keepalive=1200 #set MQTT time out to 20 minutes
 
 # 1 should correspond to /dev/video1 , your USB camera. The 0 is reserved
 # for the TX2 onboard camera
 # ^^^ Apparently this is not always the case, depending on the order
 # of recognition
 cap = cv.VideoCapture(1)
-# face_cascade = cv.CascadeClassifier('/usr/share/opencv4/haarcascades/haarcascade_frontalface_default.xml')
 
 
 # set up connection to MQTT broker on the TX2
-
+print("\n\n##### Connecting to MQTT...")
+keepalive=1200  # avoid continuous dropouts when no active data
 local_mqttclient = mqtt.Client("facedetect")
 local_mqttclient.connect(LOCAL_MQTT_HOST, LOCAL_MQTT_PORT,keepalive)
+
 
 # Set up variables
 DATA_LOC = "~/W251/MIDS-W251/wk7/FaceDetectNeural/data"
@@ -72,6 +81,10 @@ tf_sess = tf.Session(config=tf_config)
 # Note that this will take a while
 # tf.import_graph_def(trt_graph, name='')
 
+# use this if you want to try directly on the frozen TF graph
+# this is much faster
+tf.import_graph_def(frozen_graph, name='')
+
 tf_input = tf_sess.graph.get_tensor_by_name(input_names[0] + ':0')
 tf_scores = tf_sess.graph.get_tensor_by_name('detection_scores:0')
 tf_boxes = tf_sess.graph.get_tensor_by_name('detection_boxes:0')
@@ -94,42 +107,47 @@ while(t == True):
     image_resized = np.array(image.resize((300, 300)))
     image = np.array(image)
 
+    print("\n\n##### Running Network on Image...")
+    scores, boxes, classes, num_detections = tf_sess.run([tf_scores, tf_boxes, tf_classes, tf_num_detections], feed_dict={
+        tf_input: image_resized[None, ...]
+    })
 
+    boxes = boxes[0] # index by 0 to remove batch dimension
+    scores = scores[0]
+    classes = classes[0]
+    num_detections = num_detections[0]
 
-t = True
+    print("boxes:", boxes)
+    print("scores", scores)
+    print("classes:", classes)
+    print("num_detections:", num_detections)
+
+    print("\n\n##### Sleeping...")
+    time.sleep(100000);
+
+    t = True
 
 # while(True):
-while(t == True):
+# while(t == True):
     # Capture frame-by-frame
-    ret, frame = cap.read()
-
-    # We don't use the color information, so might as well save space
-    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-    # face detection and other logic goes here
-
-    print(gray)
-    print(gray.shape)
-
-
-    # faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-    faces = []  # DEBUG - stops the loop running
-    print(faces) 
-    for (x,y,w,h) in faces:
-        gray_cropped = gray[y:y+h, x:x+w].copy()
-        print("faces: ",faces)
-        print(gray_cropped)
-        print(gray_cropped.shape)
-
-        # Publish the captured greyscale face to MQTT in JSON format
-        print (gray_cropped.shape)
-
-        # first member is a tuple showing the resolution of the captured face
-        json_string = json.dumps( ( gray_cropped.shape, gray_cropped.tolist()) )
-        print(json_string)
-        local_mqttclient.publish(LOCAL_MQTT_TOPIC, payload=json_string, qos=0, retain=False)
-
-
-    # Slow the capture rate down a bit
-    time.sleep(1);
-    
-    t = False
+#    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+#    print(faces) 
+##    for (x,y,w,h) in faces:
+#        gray_cropped = gray[y:y+h, x:x+w].copy()
+#        print("faces: ",faces)
+#        print(gray_cropped)
+#        print(gray_cropped.shape)
+#
+#        # Publish the captured greyscale face to MQTT in JSON format
+#        print (gray_cropped.shape)
+#
+#        # first member is a tuple showing the resolution of the captured face
+#        json_string = json.dumps( ( gray_cropped.shape, gray_cropped.tolist()) )
+#        print(json_string)
+#        local_mqttclient.publish(LOCAL_MQTT_TOPIC, payload=json_string, qos=0, retain=False)
+#
+#
+#    # Slow the capture rate down a bit
+#    time.sleep(1);
+#    
+#    t = False
