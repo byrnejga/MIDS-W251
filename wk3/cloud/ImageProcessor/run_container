@@ -1,0 +1,6 @@
+echo
+echo RUNNING imgproc
+echo ===============
+echo
+
+docker run --name imgproc -it --rm --net=wk3 imgproc $*

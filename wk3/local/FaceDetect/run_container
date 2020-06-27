@@ -1,0 +1,6 @@
+echo
+echo RUNNING facedetect
+echo ==================
+echo
+
+docker run --name facedetect -it --rm --net=wk3 --device /dev/video0:/dev/video0 --device /dev/video1:/dev/video1 -e DISPLAY=$DISPLAY -e MQTT_CONNECT=tx2broker --runtime=nvidia facedetect  $*

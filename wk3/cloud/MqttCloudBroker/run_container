@@ -1,0 +1,5 @@
+echo
+echo RUNNING cloudbroker
+echo ===================
+echo
+docker run --name cloudbroker -it --rm --net=wk3 -p 1883:1883 cloudbroker $*

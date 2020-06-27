@@ -1,0 +1,29 @@
+version: '3'
+
+
+services:
+        facedetect:
+                build: ./FaceDetect
+                image: facedetect:latest
+                depends_on:
+                        - tx2broker
+                devices:
+                        - "/dev/video0:/dev/video0"
+                        - "/dev/video1:/dev/video1"
+
+        tx2broker:
+                build: ./MqttTX2Broker
+                image: tx2broker:latest
+                expose:
+                        - "1883"
+
+        forwarder:
+                build: ./MqttForwarder
+                image: forwarder:latest
+                depends_on:
+                        - tx2broker
+
+networks:
+        wk3:
+           driver: bridge
+
