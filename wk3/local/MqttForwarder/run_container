@@ -1,6 +1,0 @@
-echo
-echo RUNNING tx2forwarder
-echo ====================
-echo
-
-docker run --name tx2forwarder -it --rm --net=wk3 -e DISPLAY=$DISPLAY  tx2forwarder $*

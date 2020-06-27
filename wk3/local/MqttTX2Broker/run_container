@@ -1,5 +1,0 @@
-echo
-echo RUNNING tx2broker
-echo =================
-echo
-docker run --name tx2broker -it --rm --net=wk3 -e DISPLAY=$DISPLAY -e MQTT_CONNECT=tx2broker tx2broker $*
