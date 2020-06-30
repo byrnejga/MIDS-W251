@@ -1,0 +1,93 @@
+# commands to set up the images
+
+ibmcloud login
+ibmcloud sl security sshkey-list
+ibmcloud sl vs create --datacenter=lon04 --hostname=v100a --domain=byrnej.cloud --image=2263543 --billing=hourly  --network 1000 --key=1823362 --flavor AC2_16X120X100 --san
+ibmcloud sl vs create --datacenter=lon04 --hostname=v100b --domain=byrnej.cloud --image=2263543 --billing=hourly  --network 1000 --key=1823362 --flavor AC2_16X120X100 --sano
+
+# download the 
+
+
+######## IMPORTANT -- UPGRADE THE IMAGES
+# ever, you will still need to log into the Softlayer Portal, find your instances
+# under "devices" and "upgrade" them by adding a second 2 TB SAN drive to each VM,
+# then format the 2TB disk and mount it to /data on each VM as described here under
+# the "prepare the second disk" section.
+# WEBSITE: https://github.com/MIDS-scaling-up/v2/blob/master/week03/hw/digits/README.md
+#
+#
+# Create an ext4 formatted partition on the disk (check the device locn)
+parted /dev/xvdc mklabel gpt
+parted -a opt /dev/xvdc mkpart primary ext4 0% 100%
+mkfs.ext4 -L data  -E lazy_itable_init=0,lazy_journal_init=0  /dev/xvdc1
+
+
+
+# Add to /etc/fstab on VM  (verify the device number using fdisk -l
+/dev/xvdc1 /data                   ext4    defaults,noatime        0 0
+
+mount /data
+
+
+# Create an account at https://ngc.nvidia.com/
+# Follow these instructions to create an Nvidia Cloud docker registry API Key, unless you already have one.
+
+# Login into one of the VMs and use your API key to login into Nvidia Cloud docker registry
+
+# Pull the latest tensorflow image with python3: docker pull nvcr.io/nvidia/tensorflow:19.05-py3
+docker pull nvcr.io/nvidia/tensorflow:19.05-py3
+
+# Use the files on docker directory to create an openseq2seq image
+# # Installation instructions at: https://nvidia.github.io/OpenSeq2Seq/html/installation.html
+git clone https://github.com/NVIDIA/OpenSeq2Seq
+git clone https://github.com/MIDS-scaling-up/v2
+
+cd v2/week09/hw/docker 
+docker build -topenseq2seq:latest .
+
+cd OpenSeq2Seq/
+
+# Install nmon to see whether the network between the two instances is a bottleneck
+apt-get install nmon
+
+# Copy the created docker image to the other VM (or repeat the same steps on the other VM)
+
+# Create containers on both VMs: docker run --runtime=nvidia -d --name openseq2seq --net=host -e SSH_PORT=4444 -v /data:/data -p 6006:6006 openseq2seq
+docker run --runtime=nvidia -d --name openseq2seq --net=host -e SSH_PORT=4444 -v /data:/data -p 6006:6006 openseq2seq
+
+# On each VM, create an interactive bash sesion inside the container: docker exec -ti openseq2seq bash and run the following commands in the container shell:
+docker exec -ti openseq2seq bash 
+export PS1="openseq2seq # "
+
+
+# Test mpi: mpirun -n 2 -H <vm1 private ip address>,<vm2 private ip address> --allow-run-as-root hostname
+# on both - no need to reverse the private IP addresses.
+mpirun -n 2 -H 10.222.17.165,10.222.17.168 --allow-run-as-root hostname
+
+# Pull data to be used in neural machine tranlsation training (more info):
+cd /opt/OpenSeq2Seq 
+scripts/get_en_de.sh /data/wmt16_de_en
+
+# Copy configuration file to /data directory: cp example_configs/text2text/en-de/transformer-base.py /data
+cp example_configs/text2text/en-de/transformer-base.py /data
+cd /opt/OpenSeq2Seq
+
+# Edit /data/transformer-base.py: replace [REPLACE THIS TO THE PATH WITH YOUR WMT DATA] with /data/wmt16_de_en/, in base_parms section replace "logdir": "nmt-small-en-de", with "logdir": "/data/en-de-transformer/", make "batch_size_per_gpu": 128, and the in eval_params section set "repeat": to True.
+
+# If you are using V-100 GPUs, modify the config file to use mixed precision per the instructions in the file and set "batch_size_per_gpu": 256 (yes, you can fit twice as much data in memory if you are using 16-bit precision)
+
+# You will run out of credits unless you kill them after 50,000 steps (the config file will make the model run for 300,000 steps unless you change the max_steps parameter or kill training by hand)
+
+# Start training -- on the first VM only: nohup mpirun --allow-run-as-root -n 4 -H <vm1 private ip address>:2,<vm2 private ip address>:2 -bind-to none -map-by slot --mca btl_tcp_if_include eth0 -x NCCL_SOCKET_IFNAME=eth0 -x NCCL_DEBUG=INFO -x LD_LIBRARY_PATH python run.py --config_file=/data/transformer-base.py --use_horovod=True --mode=train_eval &
+
+nohup mpirun --allow-run-as-root -n 4 -H 10.222.17.165:2,10.222.17.168:2 -bind-to none -map-by slot --mca btl_tcp_if_include eth0 -x NCCL_SOCKET_IFNAME=eth0 -x NCCL_DEBUG=INFO -x LD_LIBRARY_PATH python run.py --config_file=/data/transformer-base.py --use_horovod=True --mode=train_eval &
+
+
+# Note that the above command starts 4 total tasks (-n 4), two on each node (-H :2,:2), asks the script to use horovod for communication, which in turn, uses NCCL, and then forces NCCL to use the internal nics on the VMs for communication (-x NCCL_SOCKET_IFNAME=eth0). Mpi is only used to set up the cluster.
+
+# Monitor training progress: tail -f nohup.out
+
+# Start tensorboard on the same machine where you started training, e.g. nohup tensorboard --logdir=/data/en-de-transformer You should be able to monitor your progress by putting http://public_ip_of_your_vm1:6006 !
+
+#
+#   After your training is done, download your best model to your jetson tx2. [Hint: it will be located in /data/en-de-transformer on the first VM] Alternatively, you could always download a checkpoint from Nvidia here
