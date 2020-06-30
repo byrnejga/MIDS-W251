@@ -33,6 +33,16 @@ On this evidence, it appears that the GPU capacity is the limiting factor to the
 
 
 ## Take a look at the plot of the learning rate and then check the config file. Can you explan this setting?
+The following portion of the `base_params` configuration stucture sets up the learning rate approach:
+```
+  "lr_policy": transformer_policy,
+  "lr_policy_params": {
+    "learning_rate": 2.0,
+    "warmup_steps": 8000,
+    "d_model": d_model,
+  },
+```
+The `transformer_policy` sets up a Noam style warmup and lr decay pattern. 2.0 is the initial learning rate.  The model will increase learning rate linearly for the first 8000 steps and then revert to the Noam formula described in the _Attention is All You Need_ paper we studied a few weeks ago.
 
 ## How big was your training set (mb)? How many training lines did it contain?
 The training set comprises of two tokenized files, one for English and the corresponding German records.  A total of 1.88GB:
@@ -54,8 +64,15 @@ root@v100a:/data/wmt16_de_en# wc -l train.clean*shuff*tok
 ```
 
 ## What are the files that a TF checkpoint is comprised of?
+There is a master `checkpoint` file that lists all the checkpoints then a set of 3 or more files for each chekpoint. For the checkpoint taken at the end of the run, the following files were created:
+```
+model.ckpt-50000.data000000-of-000001  # May be multiple of these files depending on size and configuration
+model.ckpt-50000.index
+model.ckpt-50000.meta
+```
 
 ## How big is your resulting model checkpoint (mb)?
+Each set of three files is a total of 865MB.
 
 ## Remember the definition of a "step". How long did an average step take?
 
