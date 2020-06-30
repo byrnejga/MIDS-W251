@@ -1,0 +1,6 @@
+ibmcloud sl vs create --datacenter=lon04 --hostname=v100b --domain=byrnej.cloud --image=2263543 --billing=hourly  --network 1000 --key=1823362 --flavor AC2_16X120X100 --san
+
+also can use wdc0[1-7] which are in DC
+
+note ssh key ID is 1823362 
+
