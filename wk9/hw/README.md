@@ -75,5 +75,11 @@ model.ckpt-50000.meta
 Each set of three files is a total of 865MB.
 
 ## Remember the definition of a "step". How long did an average step take?
+Training took a total of 28h, 21m, or 102,060 seconds.  Dividing in the 50,000 steps gives us an average time of 2.04 seconds per step. Note that this includes the time taken to initialize the model, and 6 evaluation runs, but they are negligible in duration compared with the total time taken. 
 
 ## How does that correlate with the observed network utilization between nodes?
+I am not 100% sure of the intent of this question, but I am going to guess that it involves how and what data passes between the nodes in a Hovorod cluster.  When using Hovorod, each GPU gets its own worker thread on the GPU's host machine.  Each worker randomly selects its own minibatch of (256/4)=64 records from the training data set. The data itself can be obtained locally - why we have to put the files on both nodes - so never goes across the connection between them. When upgrading the gradients however, all four workers and the gradients and parameters loaded in their respective GPUs are kept in step, so at a minimum a set of 60,880,896 trainable parameters need to pass between the nodes at least four times, once per worker from remote to master to calculate the common gradients and once per remote worker (in this case 2 remote workers) to push back the full, matched set of new parameters.  Mixed precision mode uses a mix of 16- and 32-bit floats for calculations, so each set of parameters will be between 122 and 244MB of total data, or between 244MB and 488MB of data flowing in each direction per step.  
+
+With a step time of 2s, this works out to between 122MB/s and 244MB/s duplex not accounting for protocol overheads and other communication done by Hovorod. This lines up with the ~200MB/s duplex rates I observed during training. 
+
+
