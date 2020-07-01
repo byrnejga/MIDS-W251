@@ -1,0 +1,38 @@
+<annotation>
+	<folder>images</folder>
+	<filename>videoplayback3397.jpg</filename>
+	<path>/home/james/W251/MIDS-W251/wk8/hw/images/videoplayback3397.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1000</width>
+		<height>563</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Tie Fighter</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>689</xmin>
+			<ymin>134</ymin>
+			<xmax>854</xmax>
+			<ymax>314</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Tie Fighter</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>380</xmin>
+			<ymin>81</ymin>
+			<xmax>452</xmax>
+			<ymax>170</ymax>
+		</bndbox>
+	</object>
+</annotation>

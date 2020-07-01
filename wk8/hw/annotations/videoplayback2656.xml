@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>videoplayback2656.jpg</filename>
+	<path>/home/james/W251/MIDS-W251/wk8/hw/images/videoplayback2656.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1000</width>
+		<height>563</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Millennium Falcon</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>518</xmin>
+			<ymin>72</ymin>
+			<xmax>983</xmax>
+			<ymax>454</ymax>
+		</bndbox>
+	</object>
+</annotation>

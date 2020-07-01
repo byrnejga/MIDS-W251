@@ -1,0 +1,38 @@
+<annotation>
+	<folder>images</folder>
+	<filename>videoplayback2918.jpg</filename>
+	<path>/home/james/W251/MIDS-W251/wk8/hw/images/videoplayback2918.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1000</width>
+		<height>563</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Tie Fighter</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>547</xmin>
+			<ymin>320</ymin>
+			<xmax>618</xmax>
+			<ymax>405</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Millennium Falcon</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>74</xmin>
+			<ymin>70</ymin>
+			<xmax>795</xmax>
+			<ymax>276</ymax>
+		</bndbox>
+	</object>
+</annotation>

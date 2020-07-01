@@ -1,6 +1,6 @@
 ## Homework 8 - James Byrne
 
-### Questions:
+### PART 1, Questions:
 
 #### 1. In the time allowed, how many images did you annotate?
 I 3 hours I managed almost 340 of the images.  It went much faster once I worked out the keyboard shortcuts.  I continued after the 3 hours to complete all the images.
@@ -26,4 +26,28 @@ Before doing that, however, I would consider stripping off the black letterbox b
 
 
 
+### PART 2, Questions:
 
+#### 1. Describe the following augmentations in your own words
+
+To generate more images for the data set, the augmentations create similar images, but due to the transformations used, will train different parts of the image detection netwkork.
+
+It may be necessary to rescale or pad both original and augmenting images to a standard resolution expected by the input layer of a CNN.
+
+
+#### Flip
+mirror the image either vertically or horizontally - doing both is the equvalent of a 180^o.
+##### Rotation
+The image can be rotated - usually by 90^o, 180^o or 270^o. Rotation can be used in conjunction with flips, but be sure to avoid using multiple combinations that add up to the same transformation.
+
+##### Scale
+The image can be scaled up or down, changing the size of the objects. Scaling can also be anamorpic, resulting in distorted pictures of the objects, but preserving the core features.
+
+##### Crop
+We can randomly crop sections out of each picture, effectively changing the position of the objects. Checks should be included to ensure we do not end up cropping out the objects of interest. Partially cropping the objects is generally OK, as we would typically tag partial or occluded images of objecs by hand.
+
+##### Translation
+Translation moves the object of interest within the frame and avoids image recognition models only being able to identify objects that are in a particular part of the image. 
+
+##### Noise
+Noise augmentation introduces either random image variations - like analog TV smow - or uses a blurring algorithm (usually a gaussian) to reduce detail. Noisy pictures will help generalization of the trained network. 
