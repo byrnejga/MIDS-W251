@@ -41,7 +41,7 @@ mirror the image either vertically or horizontally - doing both is the equvalent
 The image can be rotated - usually by 90^o, 180^o or 270^o. Rotation can be used in conjunction with flips, but be sure to avoid using multiple combinations that add up to the same transformation.
 
 ##### Scale
-The image can be scaled up or down, changing the size of the objects. Scaling can also be anamorpic, resulting in distorted pictures of the objects, but preserving the core features.
+The image can be scaled up or down, changing the size of the objects (also known as zooming). Scaling can also be anamorpic, resulting in distorted pictures of the objects, but preserving the core features (also referred to as stretching).
 
 ##### Crop
 We can randomly crop sections out of each picture, effectively changing the position of the objects. Checks should be included to ensure we do not end up cropping out the objects of interest. Partially cropping the objects is generally OK, as we would typically tag partial or occluded images of objecs by hand.
@@ -51,3 +51,8 @@ Translation moves the object of interest within the frame and avoids image recog
 
 ##### Noise
 Noise augmentation introduces either random image variations - like analog TV smow - or uses a blurring algorithm (usually a gaussian) to reduce detail. Noisy pictures will help generalization of the trained network. 
+
+### PART 3, Questions:
+
+#### 1. Image annotations require the coordinates of the objects and their classes; in your option, what is needed for an audio annotation?
+For audio annotation, in addition to the label, we would need the start and end timings of the labelled sound, possibly down to the specific sound sample level - the equivalent of image tagging tightly to the nearest pixel. 
