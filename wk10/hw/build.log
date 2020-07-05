@@ -1,0 +1,408 @@
+Sending build context to Docker daemon  130.6kB
+Step 1/22 : FROM w251-tx2-hw9
+ ---> d65818156973
+Step 2/22 : COPY ./1_dqn_tutorial.ipynb /tmp
+ ---> Using cache
+ ---> c22f2b60930c
+Step 3/22 : RUN apt-get update
+ ---> Using cache
+ ---> e3c226b47218
+Step 4/22 : RUN apt-get install -y jupyter-notebook
+ ---> Using cache
+ ---> afb0ae39d6c2
+Step 5/22 : RUN apt-get install -y xvfb ffmpeg
+ ---> Using cache
+ ---> 15c18c278a0e
+Step 6/22 : RUN apt-get install -y python3-pip
+ ---> Using cache
+ ---> 5ccb9e4a3607
+Step 7/22 : RUN apt-get install -y build-essential
+ ---> Running in 01b118036706
+Reading package lists...
+Building dependency tree...
+Reading state information...
+build-essential is already the newest version (12.4ubuntu1).
+0 upgraded, 0 newly installed, 0 to remove and 128 not upgraded.
+Removing intermediate container 01b118036706
+ ---> c7b368884a56
+Step 8/22 : RUN apt-get install -y libatlas-base-dev
+ ---> Running in 4d1400ddb326
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libatlas3-base
+Suggested packages:
+  libatlas-doc liblapack-doc
+The following NEW packages will be installed:
+  libatlas-base-dev libatlas3-base
+0 upgraded, 2 newly installed, 0 to remove and 128 not upgraded.
+Need to get 4740 kB of archives.
+After this operation, 33.4 MB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports bionic/universe arm64 libatlas3-base arm64 3.10.3-5 [2097 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports bionic/universe arm64 libatlas-base-dev arm64 3.10.3-5 [2643 kB]
+Fetched 4740 kB in 1s (4722 kB/s)
+Selecting previously unselected package libatlas3-base:arm64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 51597 files and directories currently installed.)
+Preparing to unpack .../libatlas3-base_3.10.3-5_arm64.deb ...
+Unpacking libatlas3-base:arm64 (3.10.3-5) ...
+Selecting previously unselected package libatlas-base-dev:arm64.
+Preparing to unpack .../libatlas-base-dev_3.10.3-5_arm64.deb ...
+Unpacking libatlas-base-dev:arm64 (3.10.3-5) ...
+Setting up libatlas3-base:arm64 (3.10.3-5) ...
+update-alternatives: using /usr/lib/aarch64-linux-gnu/atlas/libblas.so.3 to provide /usr/lib/aarch64-linux-gnu/libblas.so.3 (libblas.so.3-aarch64-linux-gnu) in auto mode
+update-alternatives: using /usr/lib/aarch64-linux-gnu/atlas/liblapack.so.3 to provide /usr/lib/aarch64-linux-gnu/liblapack.so.3 (liblapack.so.3-aarch64-linux-gnu) in auto mode
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Setting up libatlas-base-dev:arm64 (3.10.3-5) ...
+update-alternatives: using /usr/lib/aarch64-linux-gnu/atlas/libblas.so to provide /usr/lib/aarch64-linux-gnu/libblas.so (libblas.so-aarch64-linux-gnu) in auto mode
+update-alternatives: using /usr/lib/aarch64-linux-gnu/atlas/liblapack.so to provide /usr/lib/aarch64-linux-gnu/liblapack.so (liblapack.so-aarch64-linux-gnu) in auto mode
+Removing intermediate container 4d1400ddb326
+ ---> 57634bef6cad
+Step 9/22 : RUN apt-get install -y libblas-dev
+ ---> Running in d0ee7bf9f9bf
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  liblapack-doc
+The following NEW packages will be installed:
+  libblas-dev
+0 upgraded, 1 newly installed, 0 to remove and 128 not upgraded.
+Need to get 87.2 kB of archives.
+After this operation, 871 kB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports bionic/main arm64 libblas-dev arm64 3.7.1-4ubuntu1 [87.2 kB]
+Fetched 87.2 kB in 0s (226 kB/s)
+Selecting previously unselected package libblas-dev:arm64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 51793 files and directories currently installed.)
+Preparing to unpack .../libblas-dev_3.7.1-4ubuntu1_arm64.deb ...
+Unpacking libblas-dev:arm64 (3.7.1-4ubuntu1) ...
+Setting up libblas-dev:arm64 (3.7.1-4ubuntu1) ...
+Removing intermediate container d0ee7bf9f9bf
+ ---> 6e3c32899851
+Step 10/22 : RUN apt-get install -y liblapack-dev
+ ---> Running in c878d5dc2932
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  liblapack-doc
+The following NEW packages will be installed:
+  liblapack-dev
+0 upgraded, 1 newly installed, 0 to remove and 128 not upgraded.
+Need to get 1393 kB of archives.
+After this operation, 8868 kB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports bionic/main arm64 liblapack-dev arm64 3.7.1-4ubuntu1 [1393 kB]
+Fetched 1393 kB in 1s (2007 kB/s)
+Selecting previously unselected package liblapack-dev:arm64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 51802 files and directories currently installed.)
+Preparing to unpack .../liblapack-dev_3.7.1-4ubuntu1_arm64.deb ...
+Unpacking liblapack-dev:arm64 (3.7.1-4ubuntu1) ...
+Setting up liblapack-dev:arm64 (3.7.1-4ubuntu1) ...
+Removing intermediate container c878d5dc2932
+ ---> b6947ba163bf
+Step 11/22 : RUN apt-get install -y libatlas-base-dev
+ ---> Running in 041b2beedb54
+Reading package lists...
+Building dependency tree...
+Reading state information...
+libatlas-base-dev is already the newest version (3.10.3-5).
+0 upgraded, 0 newly installed, 0 to remove and 128 not upgraded.
+Removing intermediate container 041b2beedb54
+ ---> ebda31e687d5
+Step 12/22 : RUN apt-get install -y gfortran
+ ---> Running in cd9d70f13fd4
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  cpp cpp-7 g++-7 gcc gcc-7 gcc-7-base gfortran-7 libasan4 libgcc-7-dev
+  libgfortran-7-dev libgfortran4 libstdc++-7-dev libubsan0
+Suggested packages:
+  cpp-doc gcc-7-locales gcc-7-doc libstdc++6-7-dbg gcc-multilib flex bison gdb
+  gcc-doc libgcc1-dbg libgomp1-dbg libitm1-dbg libatomic1-dbg libasan4-dbg
+  liblsan0-dbg libtsan0-dbg libubsan0-dbg libcilkrts5-dbg libmpx2-dbg
+  libquadmath0-dbg gfortran-doc gfortran-7-doc libgfortran4-dbg
+  libcoarrays-dev libstdc++-7-doc
+The following NEW packages will be installed:
+  gfortran gfortran-7 libgfortran-7-dev
+The following packages will be upgraded:
+  cpp cpp-7 g++-7 gcc gcc-7 gcc-7-base libasan4 libgcc-7-dev libgfortran4
+  libstdc++-7-dev libubsan0
+11 upgraded, 3 newly installed, 0 to remove and 117 not upgraded.
+Need to get 33.7 MB of archives.
+After this operation, 27.0 MB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 libasan4 arm64 7.5.0-3ubuntu1~18.04 [335 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 libubsan0 arm64 7.5.0-3ubuntu1~18.04 [117 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 g++-7 arm64 7.5.0-3ubuntu1~18.04 [8077 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 gcc-7 arm64 7.5.0-3ubuntu1~18.04 [7772 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 libstdc++-7-dev arm64 7.5.0-3ubuntu1~18.04 [1471 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 libgcc-7-dev arm64 7.5.0-3ubuntu1~18.04 [833 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 libgfortran4 arm64 7.5.0-3ubuntu1~18.04 [248 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 cpp-7 arm64 7.5.0-3ubuntu1~18.04 [7046 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 gcc-7-base arm64 7.5.0-3ubuntu1~18.04 [18.3 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 cpp arm64 4:7.4.0-1ubuntu2.3 [27.7 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 gcc arm64 4:7.4.0-1ubuntu2.3 [5208 B]
+Get:12 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 libgfortran-7-dev arm64 7.5.0-3ubuntu1~18.04 [300 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 gfortran-7 arm64 7.5.0-3ubuntu1~18.04 [7465 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 gfortran arm64 4:7.4.0-1ubuntu2.3 [1344 B]
+Fetched 33.7 MB in 2s (18.9 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 51808 files and directories currently installed.)
+Preparing to unpack .../00-libasan4_7.5.0-3ubuntu1~18.04_arm64.deb ...
+Unpacking libasan4:arm64 (7.5.0-3ubuntu1~18.04) over (7.4.0-1ubuntu1~18.04) ...
+Preparing to unpack .../01-libubsan0_7.5.0-3ubuntu1~18.04_arm64.deb ...
+Unpacking libubsan0:arm64 (7.5.0-3ubuntu1~18.04) over (7.4.0-1ubuntu1~18.04) ...
+Preparing to unpack .../02-g++-7_7.5.0-3ubuntu1~18.04_arm64.deb ...
+Unpacking g++-7 (7.5.0-3ubuntu1~18.04) over (7.4.0-1ubuntu1~18.04) ...
+Preparing to unpack .../03-gcc-7_7.5.0-3ubuntu1~18.04_arm64.deb ...
+Unpacking gcc-7 (7.5.0-3ubuntu1~18.04) over (7.4.0-1ubuntu1~18.04) ...
+Preparing to unpack .../04-libstdc++-7-dev_7.5.0-3ubuntu1~18.04_arm64.deb ...
+Unpacking libstdc++-7-dev:arm64 (7.5.0-3ubuntu1~18.04) over (7.4.0-1ubuntu1~18.04) ...
+Preparing to unpack .../05-libgcc-7-dev_7.5.0-3ubuntu1~18.04_arm64.deb ...
+Unpacking libgcc-7-dev:arm64 (7.5.0-3ubuntu1~18.04) over (7.4.0-1ubuntu1~18.04) ...
+Preparing to unpack .../06-libgfortran4_7.5.0-3ubuntu1~18.04_arm64.deb ...
+Unpacking libgfortran4:arm64 (7.5.0-3ubuntu1~18.04) over (7.4.0-1ubuntu1~18.04) ...
+Preparing to unpack .../07-cpp-7_7.5.0-3ubuntu1~18.04_arm64.deb ...
+Unpacking cpp-7 (7.5.0-3ubuntu1~18.04) over (7.4.0-1ubuntu1~18.04) ...
+Preparing to unpack .../08-gcc-7-base_7.5.0-3ubuntu1~18.04_arm64.deb ...
+Unpacking gcc-7-base:arm64 (7.5.0-3ubuntu1~18.04) over (7.4.0-1ubuntu1~18.04) ...
+Preparing to unpack .../09-cpp_4%3a7.4.0-1ubuntu2.3_arm64.deb ...
+Unpacking cpp (4:7.4.0-1ubuntu2.3) over (4:7.4.0-1ubuntu2.2) ...
+Preparing to unpack .../10-gcc_4%3a7.4.0-1ubuntu2.3_arm64.deb ...
+Unpacking gcc (4:7.4.0-1ubuntu2.3) over (4:7.4.0-1ubuntu2.2) ...
+Selecting previously unselected package libgfortran-7-dev:arm64.
+Preparing to unpack .../11-libgfortran-7-dev_7.5.0-3ubuntu1~18.04_arm64.deb ...
+Unpacking libgfortran-7-dev:arm64 (7.5.0-3ubuntu1~18.04) ...
+Selecting previously unselected package gfortran-7.
+Preparing to unpack .../12-gfortran-7_7.5.0-3ubuntu1~18.04_arm64.deb ...
+Unpacking gfortran-7 (7.5.0-3ubuntu1~18.04) ...
+Selecting previously unselected package gfortran.
+Preparing to unpack .../13-gfortran_4%3a7.4.0-1ubuntu2.3_arm64.deb ...
+Unpacking gfortran (4:7.4.0-1ubuntu2.3) ...
+Setting up gcc-7-base:arm64 (7.5.0-3ubuntu1~18.04) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Setting up libasan4:arm64 (7.5.0-3ubuntu1~18.04) ...
+Setting up libgfortran4:arm64 (7.5.0-3ubuntu1~18.04) ...
+Setting up libubsan0:arm64 (7.5.0-3ubuntu1~18.04) ...
+Setting up libgcc-7-dev:arm64 (7.5.0-3ubuntu1~18.04) ...
+Setting up cpp-7 (7.5.0-3ubuntu1~18.04) ...
+Setting up libstdc++-7-dev:arm64 (7.5.0-3ubuntu1~18.04) ...
+Setting up libgfortran-7-dev:arm64 (7.5.0-3ubuntu1~18.04) ...
+Setting up cpp (4:7.4.0-1ubuntu2.3) ...
+Setting up gcc-7 (7.5.0-3ubuntu1~18.04) ...
+Setting up g++-7 (7.5.0-3ubuntu1~18.04) ...
+Setting up gcc (4:7.4.0-1ubuntu2.3) ...
+Setting up gfortran-7 (7.5.0-3ubuntu1~18.04) ...
+Setting up gfortran (4:7.4.0-1ubuntu2.3) ...
+update-alternatives: using /usr/bin/gfortran to provide /usr/bin/f95 (f95) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/f95.1.gz because associated file /usr/share/man/man1/gfortran.1.gz (of link group f95) doesn't exist
+update-alternatives: using /usr/bin/gfortran to provide /usr/bin/f77 (f77) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/f77.1.gz because associated file /usr/share/man/man1/gfortran.1.gz (of link group f77) doesn't exist
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Removing intermediate container cd9d70f13fd4
+ ---> 3856fae501a9
+Step 13/22 : RUN python3 -m pip install --no-cache-dir 'gym==0.10.11'
+ ---> Running in 29943b8d27dd
+Collecting gym==0.10.11
+  Downloading https://files.pythonhosted.org/packages/87/04/70d4901b7105082c9742acd64728342f6da7cd471572fd0660a73f9cfe27/gym-0.10.11.tar.gz (1.5MB)
+Requirement already satisfied: numpy>=1.10.4 in /usr/local/lib/python3.6/dist-packages (from gym==0.10.11)
+Collecting pyglet>=1.2.0 (from gym==0.10.11)
+  Downloading https://files.pythonhosted.org/packages/7a/f3/6d672ef78fd7ebb5843bd105b26da744d1a4c84eeda7ca3783788a33d4b0/pyglet-1.5.7-py3-none-any.whl (1.1MB)
+Requirement already satisfied: requests>=2.0 in /usr/local/lib/python3.6/dist-packages (from gym==0.10.11)
+Requirement already satisfied: scipy in /usr/lib/python3/dist-packages (from gym==0.10.11)
+Requirement already satisfied: six in /usr/local/lib/python3.6/dist-packages (from gym==0.10.11)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /usr/local/lib/python3.6/dist-packages (from requests>=2.0->gym==0.10.11)
+Requirement already satisfied: idna<2.9,>=2.5 in /usr/local/lib/python3.6/dist-packages (from requests>=2.0->gym==0.10.11)
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in /usr/local/lib/python3.6/dist-packages (from requests>=2.0->gym==0.10.11)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.6/dist-packages (from requests>=2.0->gym==0.10.11)
+Installing collected packages: pyglet, gym
+  Running setup.py install for gym: started
+    Running setup.py install for gym: finished with status 'done'
+Successfully installed gym-0.10.11 pyglet-1.5.7
+Removing intermediate container 29943b8d27dd
+ ---> fe0fe4ab6210
+Step 14/22 : RUN python3 -m pip install --no-cache-dir 'imageio==2.4.0'
+ ---> Running in 576fc2e42c8d
+Collecting imageio==2.4.0
+  Downloading https://files.pythonhosted.org/packages/ac/64/8e2bb6aac43d6ed7c2d9514320b43d5e80c00f150ee2b9408aee24359e6d/imageio-2.4.0.tar.gz (3.3MB)
+Requirement already satisfied: numpy in /usr/local/lib/python3.6/dist-packages (from imageio==2.4.0)
+Requirement already satisfied: pillow in /usr/lib/python3/dist-packages (from imageio==2.4.0)
+Installing collected packages: imageio
+  Running setup.py install for imageio: started
+    Running setup.py install for imageio: finished with status 'done'
+Successfully installed imageio-2.4.0
+Removing intermediate container 576fc2e42c8d
+ ---> a005d2c6bb6c
+Step 15/22 : RUN python3 -m pip install --no-cache-dir 'pyglet==1.3.2'
+ ---> Running in bacdfdd55da2
+Collecting pyglet==1.3.2
+  Downloading https://files.pythonhosted.org/packages/1c/fc/dad5eaaab68f0c21e2f906a94ddb98175662cc5a654eee404d59554ce0fa/pyglet-1.3.2-py2.py3-none-any.whl (1.0MB)
+Collecting future (from pyglet==1.3.2)
+  Downloading https://files.pythonhosted.org/packages/45/0b/38b06fd9b92dc2b68d58b75f900e97884c45bedd2ff83203d933cf5851c9/future-0.18.2.tar.gz (829kB)
+Installing collected packages: future, pyglet
+  Running setup.py install for future: started
+    Running setup.py install for future: finished with status 'done'
+  Found existing installation: pyglet 1.5.7
+    Uninstalling pyglet-1.5.7:
+      Successfully uninstalled pyglet-1.5.7
+Successfully installed future-0.18.2 pyglet-1.3.2
+Removing intermediate container bacdfdd55da2
+ ---> b5d4978b8fc7
+Step 16/22 : RUN python3 -m pip install --no-cache-dir pyvirtualdisplay
+ ---> Running in c860bb07d490
+Collecting pyvirtualdisplay
+  Downloading https://files.pythonhosted.org/packages/d0/8a/643043cc70791367bee2d19eb20e00ed1a246ac48e5dbe57bbbcc8be40a9/PyVirtualDisplay-1.3.2-py2.py3-none-any.whl
+Collecting EasyProcess (from pyvirtualdisplay)
+  Downloading https://files.pythonhosted.org/packages/48/3c/75573613641c90c6d094059ac28adb748560d99bd27ee6f80cce398f404e/EasyProcess-0.3-py2.py3-none-any.whl
+Installing collected packages: EasyProcess, pyvirtualdisplay
+Successfully installed EasyProcess-0.3 pyvirtualdisplay-1.3.2
+Removing intermediate container c860bb07d490
+ ---> e57371397fac
+Step 17/22 : RUN python3 -m pip install --no-cache-dir scipy
+ ---> Running in a93a922ad84d
+Requirement already satisfied: scipy in /usr/lib/python3/dist-packages
+Removing intermediate container a93a922ad84d
+ ---> 776759db61b6
+Step 18/22 : RUN echo python3 -m pip install --no-cache-dir --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v43 tensorflow | bash
+ ---> Running in 0048e8ad90a1
+Collecting tensorflow
+  Downloading https://developer.download.nvidia.com/compute/redist/jp/v43/tensorflow/tensorflow-2.1.0+nv20.3-cp36-cp36m-linux_aarch64.whl (236.9MB)
+Requirement already satisfied: six>=1.12.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow)
+Requirement already satisfied: astor>=0.6.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow)
+Requirement already satisfied: termcolor>=1.1.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow)
+Requirement already satisfied: wheel>=0.26; python_version >= "3" in /usr/lib/python3/dist-packages (from tensorflow)
+Requirement already satisfied: absl-py>=0.7.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow)
+Collecting tensorboard<2.2.0,>=2.1.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/d9/41/bbf49b61370e4f4d245d4c6051dfb6db80cec672605c91b1652ac8cc3d38/tensorboard-2.1.1-py3-none-any.whl (3.8MB)
+Collecting keras-preprocessing>=1.1.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/79/4c/7c3275a01e12ef9368a892926ab932b33bb13d55794881e3573482b378a7/Keras_Preprocessing-1.1.2-py2.py3-none-any.whl (42kB)
+Collecting keras-applications>=1.0.8 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/71/e3/19762fdfc62877ae9102edf6342d71b28fbfd9dea3d2f96a882ce099b03f/Keras_Applications-1.0.8-py3-none-any.whl (50kB)
+Collecting opt-einsum>=2.3.2 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/63/a5/e6c07b08b934831ccb8c98ee335e66b7761c5754ee3cabfe4c11d0b1af28/opt_einsum-3.2.1-py3-none-any.whl (63kB)
+Collecting google-pasta>=0.1.6 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl (57kB)
+Collecting protobuf>=3.8.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/47/90/27eac528bb6871336e86ed8bcbb72a9b412a4020bf69bb7be71d40e5eab0/protobuf-3.12.2-py2.py3-none-any.whl (443kB)
+Collecting wrapt>=1.11.1 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/82/f7/e43cefbe88c5fd371f4cf0cf5eb3feccd07515af9fd6cf7dbf1d1793a797/wrapt-1.12.1.tar.gz
+Requirement already satisfied: gast==0.2.2 in /usr/local/lib/python3.6/dist-packages (from tensorflow)
+Collecting tensorflow-estimator<2.2.0,>=2.1.0rc0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/18/90/b77c328a1304437ab1310b463e533fa7689f4bfc41549593056d812fab8e/tensorflow_estimator-2.1.0-py2.py3-none-any.whl (448kB)
+Requirement already satisfied: grpcio>=1.8.6 in /usr/local/lib/python3.6/dist-packages (from tensorflow)
+Collecting scipy==1.4.1; python_version >= "3" (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/04/ab/e2eb3e3f90b9363040a3d885ccc5c79fe20c5b8a3caa8fe3bf47ff653260/scipy-1.4.1.tar.gz (24.6MB)
+Requirement already satisfied: numpy<2.0,>=1.16.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow)
+Requirement already satisfied: werkzeug>=0.11.15 in /usr/local/lib/python3.6/dist-packages (from tensorboard<2.2.0,>=2.1.0->tensorflow)
+Requirement already satisfied: requests<3,>=2.21.0 in /usr/local/lib/python3.6/dist-packages (from tensorboard<2.2.0,>=2.1.0->tensorflow)
+Collecting google-auth-oauthlib<0.5,>=0.4.1 (from tensorboard<2.2.0,>=2.1.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/7b/b8/88def36e74bee9fce511c9519571f4e485e890093ab7442284f4ffaef60b/google_auth_oauthlib-0.4.1-py2.py3-none-any.whl
+Collecting setuptools>=41.0.0 (from tensorboard<2.2.0,>=2.1.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/41/fa/60888a1d591db07bc9c17dce2bcfb9f00ac507c0a23ecb827e76feb8f816/setuptools-49.1.0-py3-none-any.whl (789kB)
+Requirement already satisfied: markdown>=2.6.8 in /usr/local/lib/python3.6/dist-packages (from tensorboard<2.2.0,>=2.1.0->tensorflow)
+Collecting google-auth<2,>=1.6.3 (from tensorboard<2.2.0,>=2.1.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/21/57/d706964a7e4056f3f2244e16705388c11631fbb53d3e2d2a2d0fbc24d470/google_auth-1.18.0-py2.py3-none-any.whl (90kB)
+Requirement already satisfied: h5py in /usr/local/lib/python3.6/dist-packages (from keras-applications>=1.0.8->tensorflow)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.6/dist-packages (from requests<3,>=2.21.0->tensorboard<2.2.0,>=2.1.0->tensorflow)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /usr/local/lib/python3.6/dist-packages (from requests<3,>=2.21.0->tensorboard<2.2.0,>=2.1.0->tensorflow)
+Requirement already satisfied: idna<2.9,>=2.5 in /usr/local/lib/python3.6/dist-packages (from requests<3,>=2.21.0->tensorboard<2.2.0,>=2.1.0->tensorflow)
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in /usr/local/lib/python3.6/dist-packages (from requests<3,>=2.21.0->tensorboard<2.2.0,>=2.1.0->tensorflow)
+Collecting requests-oauthlib>=0.7.0 (from google-auth-oauthlib<0.5,>=0.4.1->tensorboard<2.2.0,>=2.1.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/a3/12/b92740d845ab62ea4edf04d2f4164d82532b5a0b03836d4d4e71c6f3d379/requests_oauthlib-1.3.0-py2.py3-none-any.whl
+Collecting pyasn1-modules>=0.2.1 (from google-auth<2,>=1.6.3->tensorboard<2.2.0,>=2.1.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/95/de/214830a981892a3e286c3794f41ae67a4495df1108c3da8a9f62159b9a9d/pyasn1_modules-0.2.8-py2.py3-none-any.whl (155kB)
+Collecting rsa<5,>=3.1.4; python_version >= "3" (from google-auth<2,>=1.6.3->tensorboard<2.2.0,>=2.1.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/1c/df/c3587a667d6b308fadc90b99e8bc8774788d033efcc70f4ecaae7fad144b/rsa-4.6-py3-none-any.whl (47kB)
+Collecting cachetools<5.0,>=2.0.0 (from google-auth<2,>=1.6.3->tensorboard<2.2.0,>=2.1.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/cd/5c/f3aa86b6d5482f3051b433c7616668a9b96fbe49a622210e2c9781938a5c/cachetools-4.1.1-py3-none-any.whl
+Collecting oauthlib>=3.0.0 (from requests-oauthlib>=0.7.0->google-auth-oauthlib<0.5,>=0.4.1->tensorboard<2.2.0,>=2.1.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/05/57/ce2e7a8fa7c0afb54a0581b14a65b56e62b5759dbc98e80627142b8a3704/oauthlib-3.1.0-py2.py3-none-any.whl (147kB)
+Collecting pyasn1<0.5.0,>=0.4.6 (from pyasn1-modules>=0.2.1->google-auth<2,>=1.6.3->tensorboard<2.2.0,>=2.1.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/62/1e/a94a8d635fa3ce4cfc7f506003548d0a2447ae76fd5ca53932970fe3053f/pyasn1-0.4.8-py2.py3-none-any.whl (77kB)
+Installing collected packages: setuptools, protobuf, oauthlib, requests-oauthlib, pyasn1, pyasn1-modules, rsa, cachetools, google-auth, google-auth-oauthlib, tensorboard, keras-preprocessing, keras-applications, opt-einsum, google-pasta, wrapt, tensorflow-estimator, scipy, tensorflow
+  Found existing installation: setuptools 39.0.1
+    Not uninstalling setuptools at /usr/lib/python3/dist-packages, outside environment /usr
+  Found existing installation: protobuf 3.8.0rc1
+    Uninstalling protobuf-3.8.0rc1:
+      Successfully uninstalled protobuf-3.8.0rc1
+  Found existing installation: tensorboard 1.13.1
+    Uninstalling tensorboard-1.13.1:
+      Successfully uninstalled tensorboard-1.13.1
+  Found existing installation: Keras-Preprocessing 1.0.9
+    Uninstalling Keras-Preprocessing-1.0.9:
+      Successfully uninstalled Keras-Preprocessing-1.0.9
+  Found existing installation: Keras-Applications 1.0.7
+    Uninstalling Keras-Applications-1.0.7:
+      Successfully uninstalled Keras-Applications-1.0.7
+  Running setup.py install for wrapt: started
+    Running setup.py install for wrapt: finished with status 'done'
+  Found existing installation: tensorflow-estimator 1.13.0
+    Uninstalling tensorflow-estimator-1.13.0:
+      Successfully uninstalled tensorflow-estimator-1.13.0
+  Found existing installation: scipy 0.19.1
+    Not uninstalling scipy at /usr/lib/python3/dist-packages, outside environment /usr
+  Running setup.py install for scipy: started
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: still running...
+    Running setup.py install for scipy: finished with status 'done'
+Successfully installed cachetools-4.1.1 google-auth-1.18.0 google-auth-oauthlib-0.4.1 google-pasta-0.2.0 keras-applications-1.0.8 keras-preprocessing-1.1.2 oauthlib-3.1.0 opt-einsum-3.2.1 protobuf-3.12.2 pyasn1-0.4.8 pyasn1-modules-0.2.8 requests-oauthlib-1.3.0 rsa-4.6 scipy-1.4.1 setuptools-49.1.0 tensorboard-2.1.1 tensorflow-2.1.0+nv20.3.tf2 tensorflow-estimator-2.1.0 wrapt-1.12.1
+Removing intermediate container 0048e8ad90a1
+ ---> aa995bfcf180
+Step 19/22 : RUN python3 -m pip install --no-cache-dir tf-agents==0.3.0
+ ---> Running in 04219028cba1
+Collecting tf-agents==0.3.0
+  Downloading https://files.pythonhosted.org/packages/0e/a5/07aa82a3cd586d193b2f086b50a2fd0f48bd888ae204389f666eb178cfb3/tf_agents-0.3.0-py2.py3-none-any.whl (839kB)
+Collecting tensorflow-probability>=0.6.0 (from tf-agents==0.3.0)
+  Downloading https://files.pythonhosted.org/packages/61/c5/783644c55074f42070acfa1662145f4a0c59ff425495194aa2dc4052f22a/tensorflow_probability-0.10.0-py2.py3-none-any.whl (3.5MB)
+Collecting gin-config==0.1.3 (from tf-agents==0.3.0)
+  Downloading https://files.pythonhosted.org/packages/8c/be/c984b1c8a7ba1c385b32bf39c7a225cd9f713d49705898309d01b60fd0e7/gin_config-0.1.3-py3-none-any.whl (43kB)
+Requirement already satisfied: absl-py>=0.6.1 in /usr/local/lib/python3.6/dist-packages (from tf-agents==0.3.0)
+Requirement already satisfied: numpy>=1.13.3 in /usr/local/lib/python3.6/dist-packages (from tf-agents==0.3.0)
+Requirement already satisfied: six>=1.10.0 in /usr/local/lib/python3.6/dist-packages (from tf-agents==0.3.0)
+Collecting gast>=0.3.2 (from tensorflow-probability>=0.6.0->tf-agents==0.3.0)
+  Downloading https://files.pythonhosted.org/packages/d6/84/759f5dd23fec8ba71952d97bcc7e2c9d7d63bdc582421f3cd4be845f0c98/gast-0.3.3-py2.py3-none-any.whl
+Requirement already satisfied: decorator in /usr/lib/python3/dist-packages (from tensorflow-probability>=0.6.0->tf-agents==0.3.0)
+Collecting cloudpickle>=1.2.2 (from tensorflow-probability>=0.6.0->tf-agents==0.3.0)
+  Downloading https://files.pythonhosted.org/packages/8f/d7/bdb029d3de92c165afe6cdc69a2d01e26189b3bad64a1edf6ef5a5f11d1a/cloudpickle-1.5.0-py3-none-any.whl
+Installing collected packages: gast, cloudpickle, tensorflow-probability, gin-config, tf-agents
+  Found existing installation: gast 0.2.2
+    Uninstalling gast-0.2.2:
+      Successfully uninstalled gast-0.2.2
+Successfully installed cloudpickle-1.5.0 gast-0.3.3 gin-config-0.1.3 tensorflow-probability-0.10.0 tf-agents-0.3.0
+Removing intermediate container 04219028cba1
+ ---> ddea515fc9f9
+Step 20/22 : RUN rm /usr/bin/python
+ ---> Running in 53fb7986b386
+Removing intermediate container 53fb7986b386
+ ---> 1e3afdb37c96
+Step 21/22 : RUN cd /usr/bin/ && ln -s python3 python
+ ---> Running in f0b9fb38e114
+Removing intermediate container f0b9fb38e114
+ ---> fdd4eefcdc5e
+Step 22/22 : CMD /bin/bash
+ ---> Running in 36a6760a0644
+Removing intermediate container 36a6760a0644
+ ---> 2f20126ef080
+Successfully built 2f20126ef080
+Successfully tagged tensorflow_hw10:latest

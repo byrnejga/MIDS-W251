@@ -1,1 +1,1 @@
-docker run --rm -it --privileged -p 8888:8888 tensorflow_hw10
+docker run --rm -it --privileged -p 8888:8888 --runtime nvidia tensorflow_hw10
