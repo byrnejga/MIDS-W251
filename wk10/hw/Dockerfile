@@ -18,7 +18,9 @@ RUN pip3 uninstall cloudpickle && \
 
 
 # RUN apt-get install -y jupyter-notebook 
-# RUN apt-get install -y xvfb ffmpeg 
+RUN apt-get install -y xvfb ffmpeg 
+RUN apt install -y libgl1-mesa-dev
+RUN apt-get install -y libglu1-mesa-dev 
 # RUN apt-get install -y python3-pip 
 # RUN apt-get install -y build-essential
 # RUN apt-get install -y libatlas-base-dev
@@ -26,7 +28,8 @@ RUN pip3 uninstall cloudpickle && \
 # RUN apt-get install -y liblapack-dev
 # RUN apt-get install -y libatlas-base-dev
 # RUN apt-get install -y gfortran
-# RUN python3 -m pip install --no-cache-dir 'gym==0.10.11' 
+RUN python3 -m pip install --no-cache-dir 'gym==0.10.11' 
+RUN python3 -m pip install --no-cache-dir JSAnimation
 # RUN python3 -m pip install --no-cache-dir 'imageio==2.4.0' 
 # RUN python3 -m pip install --no-cache-dir 'pyglet==1.3.2' 
 # RUN python3 -m pip install --no-cache-dir pyvirtualdisplay 
